@@ -1,0 +1,42 @@
+@rmitnik @github
+
+this:
+  first analisys
+  file name: analysis_17b051936_0001.txt
+
+Project: netguard
+
+Purpouse: protect servers against intrusions and generate logs with info about actions done 
+
+Prototype:
+   netguard_1.0
+
+   Use:
+     netguard_1.0 -i interface -l logfile 
+        interface: eth0 by default
+        logfile: netguard.log, rotate automatically in netguard.log.YYYYMMDD.HHMMSS for each new scan.
+   
+   Perform:
+      [0] Launch "tcpdump " command, where $1 is the interface and $2 is the netguard.log file
+      [1] Pass filtered http and https ip activity
+      [2] Launch a thread for each ip that does a suspicious activity according with the parameters done
+          in the netguard.cfg file, this config file will be generate by another program/script for configure the tools.
+      
+       {} Threads:
+           httpguard: script that analyce access to the web server
+
+              banip: ban an IP that match the conditions to be banned
+                     generate a status file that recommend unban or permanent ban these IPs
+	      
+                         Use: banip ip1 ip2
+                              banip ip1 netmask
+              
+           sshguard: script that analyce tryes of access to the system via ssh
+
+Developping methodology: 
+    Cicle:
+    [0] analysis -> [1] prototype -> [2] launch functional version -> [3] test -> [0]        
+    ...
+
+@rmitnik @github 20171105dom
+__eof
