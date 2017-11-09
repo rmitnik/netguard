@@ -1,2 +1,3 @@
 # netguard
-Protect servers against intrusions
+Netguard provides security to servers on LAN under Linux, banning IPs and loging attemts to crack sites, mail servers and crack the system.
+This is a collaborative project and you can apport.
